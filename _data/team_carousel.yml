@@ -1,0 +1,23 @@
+members:
+  - name: "Björn Wolf"
+    designation: "Lead Developer"
+    description: "Björn ist krass"
+    image: "/assets/images/members/dominikus_profile.jpeg"
+    social_icons:
+      - icon: "jam jam-instagram"
+        url: "#"
+  - name: "Jan Weinkauf"
+    designation: "iOS Developer"
+    description: "Jan ist cool"
+    image: "/assets/images/members/dominikus_profile.jpeg"
+    social_icons:
+      - icon: "jam jam-instagram"
+        url: "#"  
+  - name: "Dominikus Frank"
+    designation: "Developer"
+    description: "Dominikus hat diese Seite gebaut"
+    image: "/assets/images/members/dominikus_profile.jpeg"
+    social_icons:
+      - icon: "jam jam-instagram"
+        url: "#"
+  

@@ -20,7 +20,7 @@ defaults:
     values:
       layout: "default"
       custom_css: green
-      custom_font: font2
+      custom_font: font1
 
 collections:
   authors:
