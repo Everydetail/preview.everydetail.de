@@ -4,10 +4,10 @@ permalink: "/:title"
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-paginate-v2
-  - jekyll-archives
+# plugins:
+#   - jekyll-feed
+#   - jekyll-paginate-v2
+#   - jekyll-archives
 
 defaults:
   - scope:
