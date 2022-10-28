@@ -19,8 +19,8 @@ defaults:
       path: ""
     values:
       layout: "default"
-      custom_css: green
-      custom_font: font1
+      custom_css: custom
+      custom_font: font2
 
 collections:
   authors:

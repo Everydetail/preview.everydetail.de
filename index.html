@@ -1,13 +1,204 @@
 ---
 title: hey
+hero_area:
+  enable: true
+  title: "We Are"
+  animated_text:
+    - "Awesome"
+    - "Shopify"
+    - "Theme developers"
+  background_image: "/assets/images/art/bg5.jpg"
 
-header_style: one
+services_area:
+  enable: true
+  button_text: "Learn More"
+  button_url: "#"
+  services:
+
+    - title: "Graphic Design"
+      description: "Nulla vitae elit libero elit non porta gravida eget metus cras. Aenean eu leo quam."
+      icon: "jam jam-flower"
+  
+    - title: "App Development"
+      description: "Nulla vitae elit libero elit non porta gravida eget metus cras. Aenean eu leo quam."
+      icon: "jam jam-phone"
+  
+    - title: "Web Design"
+      description: "Nulla vitae elit libero elit non porta gravida eget metus cras. Aenean eu leo quam."
+      icon: "jam jam-layout"
+
+how_it_works:
+  enable: true
+  title: "How It Works?"
+  sub_title: "Here are 3 working steps to organize our business projects."
+  image: "/assets/images/concept1@2x.png"
+  steps:
+    - title: "Creative Ideas"
+      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida. Cras mattis consectetur."
+
+    - title: "Magic Touch"
+      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida. Cras mattis consectetur."
+
+    - title: "Data Analysis"
+      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida. Cras mattis consectetur."
+
 
 teams_carousel: 
-  title: Das ist der Titel
+  title: Unser Team
   type: blob
 ---
 
-{% include header.html %}
+{% if page.hero_area.enable %}
+  <section id="home" class="pt-0 mt-0">
+      <div class="wrapper white-wrapper">
+          <div class="container inner">
+              <div class="row">
+                  <div class="col-md-9">
+                      <div class="space90"></div>
+                      <h1 class="display-1">
+                          {{page.hero_area.title}}
+                          <span class="typer color-default" id="typer" data-delay="100" data-delim=":" data-words="{% for text in page.hero_area.animated_text %} {{text | append: ':'}} {% endfor %}"> </span>
+                          <span class="cursor color-default" data-owner="typer"></span>
+                      </h1>
+                      <div class="space10"></div>
+                      <h2 class="display-4">{{ site.data.general_settings.description }}</h2>
+                      <div class="space30"></div>
+                  </div>
+              </div>
+          </div>
+          <!-- /.container -->
+          
+      </div>
+      <!-- /.wrapper -->
+  </section>
+  <!-- /section -->
+{% endif %} 
+
+{% if page.services_area.enable %}
+  <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper bg-white" preserveAspectRatio="none" viewBox="0 0 1070 20.98">
+              <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg></div>
+  <div class="space50"></div>
+  <div class="row gutter-80 gutter-md-30 text-center">
+    {% for service in page.services_area.services %}
+    <div class="col-md-4">
+      {% if service.icon %}
+      <span class="icon icon-blob
+        {% assign index = forloop.index %}
+        {% case index %}
+        {% when 1 %}
+        icon-blob-default color-default
+        {% when 2 %}
+        icon-blob-default color-default
+        {% when 3 %}
+        icon-blob-default color-default
+        {% endcase %}
+        mb-30"><i class="{{service.icon}}"></i><span class="step bg-yellow">{{forloop.index}}</span></span>
+      {% endif %}
+      <h5>{{service.title}}</h5>
+      <p class="mb-15">{{service.description}}</p>
+    </div>
+    {% endfor %}
+    <div class="space40"></div>
+  </div>
+  {%- comment -%} <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-white" preserveAspectRatio="none" viewBox="0 0 1070 39.07">
+      <path d="M1070,39.07H0V21a6818.1,6818.1,0,0,1,1070,0Z" /></svg></div> {%- endcomment -%}
+  <!--/.row -->
+{% endif %}
+
+{% if page.how_it_works.enable %}
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <div class="row align-items-center">
+      {% if page.how_it_works.image %}
+      <div class="col-lg-7">
+        <figure><img src="{{page.how_it_works.image}}" alt="" /></figure>
+      </div>
+      {% endif %}
+      <!--/column -->
+      <div class="space20 d-md-none"></div>
+      <div class="space50 d-none d-md-block d-lg-none"></div>
+      <div class="col-lg-5 pl-60 pl-md-15">
+        {% if page.how_it_works.title %}
+         <h2 class="section-title larger">{{page.how_it_works.title}}</h2>
+        {% endif %}
+        {% if page.how_it_works.sub_title %}
+        <h3 class="display-4">{{page.how_it_works.sub_title}}</h3>
+        <div class="space30"></div>
+        {% endif %}
+        {% for steps in page.how_it_works.steps %}
+        <div class="d-flex flex-row justify-content-center">
+          <div>
+            <div class="icon icon-bg icon-bg-default color-default mr-25">
+              <span class="number">{{forloop.index}}</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-10">{{steps.title}}</h4>
+            <p>{{steps.description}}</p>
+          </div>
+        </div>
+        <div class="space10 d-none d-md-block"></div>
+        {% endfor %}
+      </div>
+    </div>
+    <!--/column -->
+  </div>
+  <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-white" preserveAspectRatio="none" viewBox="0 0 1070 39.07">
+      <path d="M1070,39.07H0V21a6818.1,6818.1,0,0,1,1070,0Z" /></svg></div>
+</div>
+{% endif %}
+
+
+<!--Projects Wrapper-->
+<div class="wrapper white-wrapper">
+  <div class="container inner pb-50">
+    {% if site.data.clients.title %}
+    <h2 class="title-color color-gray">{{site.data.clients.title}}</h2>
+    {% endif %}
+    <div class="row align-items-center">
+      {% if site.data.clients.sub_title %}
+      <div class="col-md-7">
+        <h3 class="display-3 mb-0">{{site.data.clients.sub_title}}</h3>
+      </div>
+      {% endif %}
+      {% if site.data.clients.button_text %}
+      <div class="col-md-3 ml-auto text-right">
+        <a href="{{site.data.clients.button_url}}" class="btn btn-default m-0">{{site.data.clients.button_text}}</a>
+      </div>
+      {% endif %}
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+  <div class="container-fluid pl-30 pr-30">
+    <div class="grid-view">
+      <div class="carousel owl-carousel" data-margin="30" data-dots="true" data-autoplay="false"
+        data-autoplay-timeout="5000"
+        data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "1441":{"items": "3"}}'>
+        {% for project in site.data.clients.projects %}
+        {% if project.highlighted == true %}
+          <div class="item">
+            <figure class="overlay overlay1 rounded">
+              <a href="{{project.url}}" target="_blank">
+               <img src="{{project.image}}" alt="{{project.title}}"/></a>
+                <figcaption>
+                  <h5 class="from-top mb-0">{{project.title}}</h5>
+                </figcaption>
+              </figure>
+          </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <!-- /.owl-carousel -->
+    </div>
+    <!-- /.grid-view -->
+  </div>
+  <!-- /.container-fluid -->
+  <div class="space140"></div>
+</div>
+<!-- /.wrapper -->
+<!---/.projects Wrapper-->
 
 {% include team_members.html %}
+
+{% include footer_6.html %}

@@ -4,20 +4,20 @@ members:
     description: "Björn ist krass"
     image: "/assets/images/members/dominikus_profile.jpeg"
     social_icons:
-      - icon: "jam jam-instagram"
-        url: "#"
+      - icon: "jam jam-linkedin"
+        url: "https://www.linkedin.com/in/bjoernwolf/"
   - name: "Jan Weinkauf"
     designation: "iOS Developer"
     description: "Jan ist cool"
     image: "/assets/images/members/dominikus_profile.jpeg"
     social_icons:
-      - icon: "jam jam-instagram"
-        url: "#"  
+      - icon: "jam jam-linkedin"
+        url: "https://www.linkedin.com/in/janweinkauff/"  
   - name: "Dominikus Frank"
     designation: "Developer"
     description: "Dominikus hat diese Seite gebaut"
     image: "/assets/images/members/dominikus_profile.jpeg"
     social_icons:
-      - icon: "jam jam-instagram"
-        url: "#"
+      - icon: "jam jam-linkedin"
+        url: "https://www.linkedin.com/in/dominikusfrank/"
   

@@ -22,6 +22,8 @@
     {% if site.data.general_settings.google_analytics.enable %} {% include analytics.html %} {% endif %}
   </head>
   <body {% if page.overflow %} class="overflow-hidden" {% endif %}>
+    {% include header_3.html %}
+    
     <div class="content-wrapper">{{ content }}</div>
     <script src="{{relative_url}}/assets/js/jquery.min.js"></script>
     <script src="{{relative_url}}/assets/js/popper.min.js"></script>

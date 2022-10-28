@@ -1,0 +1,83 @@
+---
+title: "Our Work"
+sub_title: "Aenean lacinia bibendum nulla sed consectetur"
+---
+
+<div class="space60"></div>
+
+
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <div class="grid grid-view">
+      <div class="isotope-filter text-center">
+        <ul>
+          <li><a class="button active" data-filter="*">All</a></li>
+          {% for category in site.data.clients.categories %}
+           <li><a class="button" data-filter=".{{category.filter}}">{{category.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <div class="tiles">
+        <div class="row isotope light-gallery-wrapper">
+          {% for project in site.data.clients.projects %}
+          <div class="item item-detailed grid-sizer col-md-6 col-lg-4 {% for filter in project.filters %} {{filter}} {% endfor %}">
+            <figure class="rounded mb-20">
+              <div class="item-detailed-img">
+                <img src="{{project.image}}" alt="{{project.title}}"/>
+                <img src="{{project.image}}" alt="{{project.title}}"/></div>
+              <a href="{{project.big_img}}" class="hover-icon-first lightbox" data-tip="Enlarge image"><i class="jam jam-qr-code"></i></a>
+              <a href="{{project.url}}" class="hover-icon-second" data-tip="See details"><i class="jam jam-link"></i></a>
+            </figure>
+            <div class="item-content">
+              <h2 class="post-title mb-10"><a href="{{project.url}}">{{project.title}}</a></h2>
+                <div class="meta mb-0">{{ project.filters | join: ", " }}</div>
+            </div>
+            <!-- /.item-content -->
+          </div>
+          {% endfor %}
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.tiles -->
+    </div>
+    <!-- /.grid -->
+  </div>
+  <!-- /.container -->
+</div>
+
+{%- comment -%} 
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <div class="grid grid-view">
+      <div class="isotope-filter text-center">
+        <ul>
+          <li><a class="button active" data-filter="*">All</a></li>
+          {% for category in site.data.clients.categories %}
+           <li><a class="button" data-filter=".{{category.filter}}">{{category.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <div class="tiles tiles-m">
+        <div class="row isotope">
+        {% for project in site.data.clients.projects %}
+          <div class="item grid-sizer col-md-6 col-lg-4 {% for filter in project.filters %} {{filter}} {% endfor %}">
+            <figure class="overlay overlay1 rounded">
+            <a href="{{project.url}}" target="_blank">
+             <img src="{{project.image}}" alt="{{project.title}}"/></a>
+              <figcaption>
+                <h5 class="from-top mb-0">{{project.title}}</h5>
+              </figcaption>
+            </figure>
+          </div>
+          <!-- /.item -->
+         {% endfor %}
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.tiles -->
+    </div>
+    <!-- /.grid -->
+  </div>
+</div> {%- endcomment -%}

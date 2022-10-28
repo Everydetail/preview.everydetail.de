@@ -1,0 +1,25 @@
+
+title: "Our Projects"
+sub_title: "Check out some of our awesome projects with creative ideas and great design."
+button_text: "See All Works"
+button_url: "/work"
+
+categories:
+  - title: "Jewelry"
+    filter: "jewelry"
+  - title: "Clothing"
+    filter: "clothing"
+    
+projects:
+  - title: "Marlo Laz"
+    image: "/assets/images/clients/client_marlo_laz.webp"
+    url: "https://www.marlolaz.com/"
+    highlighted: true
+    filters:
+      - jewelry
+  - title: "Rudi Gernreich"
+    image: "/assets/images/clients/client_rudi_gernreich.webp"
+    url: "https://rudigernreich.com/"
+    highlighted: true
+    filters:
+      - clothing
