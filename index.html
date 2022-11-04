@@ -29,8 +29,8 @@ services_area:
 
 how_it_works:
   enable: true
-  title: "How It Works?"
-  sub_title: "Here are 3 working steps to organize our business projects."
+  title: "Why we do it"
+  sub_title: "We have three mission statements. All with the goal to help you become great."
   image: "/assets/images/concept1@2x.png"
   steps:
     - title: "Creative Ideas"
@@ -92,7 +92,7 @@ teams_carousel:
         {% when 3 %}
         icon-blob-default color-default
         {% endcase %}
-        mb-30"><i class="{{service.icon}}"></i><span class="step bg-yellow">{{forloop.index}}</span></span>
+        mb-30"><i class="{{service.icon}}"></i><span class="step bg-dark">{{forloop.index}}</span></span>
       {% endif %}
       <h5>{{service.title}}</h5>
       <p class="mb-15">{{service.description}}</p>
