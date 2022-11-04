@@ -7067,7 +7067,10 @@ footer.inverse-text address {
     .modal-lg {
         max-width: 1000px
     }
-}
+    .modal-xl {
+        max-width: 1200px
+    }
+  }
 .modal.fade.modal-bottom-center .modal-dialog {
     position: absolute;
     bottom: 0;

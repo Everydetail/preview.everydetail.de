@@ -75,9 +75,6 @@ main_menu:
   - text: "Home"
     url: "/"
     menu_type:
-  - text: "Our Work"
-    url: "/work"
-    menu_type:
   - text: "Contact Us"
     url: "/contact"
     menu_type:

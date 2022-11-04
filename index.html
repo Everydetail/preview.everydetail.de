@@ -148,7 +148,6 @@ teams_carousel:
 </div>
 {% endif %}
 
-
 <!--Projects Wrapper-->
 <div class="wrapper white-wrapper">
   <div class="container inner pb-50">
@@ -161,7 +160,7 @@ teams_carousel:
         <h3 class="display-3 mb-0">{{site.data.clients.sub_title}}</h3>
       </div>
       {% endif %}
-      {% if site.data.clients.button_text %}
+      {% if site.data.clients.button_text != "" %}
       <div class="col-md-3 ml-auto text-right">
         <a href="{{site.data.clients.button_url}}" class="btn btn-default m-0">{{site.data.clients.button_text}}</a>
       </div>
@@ -171,29 +170,82 @@ teams_carousel:
   </div>
   <!-- /.container -->
   <div class="container-fluid pl-30 pr-30">
-    <div class="grid-view">
-      <div class="carousel owl-carousel" data-margin="30" data-dots="true" data-autoplay="false"
-        data-autoplay-timeout="5000"
-        data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "1441":{"items": "3"}}'>
+    <div class="grid grid-view">
+      <div class="isotope-filter text-center">
+        <ul>
+          <li><a class="button active" data-filter="*">All</a></li>
+          {% for category in site.data.clients.categories %}
+          <li><a class="button" data-filter=".{{category.filter}}">{{category.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <div class="tiles tiles-m">
+        <div class="row isotope">
         {% for project in site.data.clients.projects %}
         {% if project.highlighted == true %}
-          <div class="item">
+          <div class="item grid-sizer col-md-6 col-lg-4 {% for filter in project.filters %} {{filter}} {% endfor %}">
             <figure class="overlay overlay1 rounded">
-              <a href="{{project.url}}" target="_blank">
-               <img src="{{project.image}}" alt="{{project.title}}"/></a>
-                <figcaption>
-                  <h5 class="from-top mb-0">{{project.title}}</h5>
-                </figcaption>
-              </figure>
+              <a href="#" data-toggle="modal" data-target="#modal-{{ forloop.index0 }}">
+               <img src="{{project.image}}" alt="{{project.title}}" class="cover ratio--16-10"/>
+              </a>
+              <figcaption>
+                <h5 class="from-top mb-0">{{project.title}}</h5>
+              </figcaption>
+            </figure>
           </div>
+
+          <div class="modal fade" id="modal-{{ forloop.index0 }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ forloop.index0 }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+              <div class="modal-content boxed">
+                <div class="container-fluid boxed p-0">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div class="image-block-wrapper">
+                    <div class="image-block col-lg-6">
+                      <div class="image-block-bg bg-image" data-image-src="{{relative_url}}{{project.detail-image}}"></div>
+                    </div>
+                    <!--/.image-block -->
+                    <div>
+                      <div class="row no-gutters">
+                        <div class="col-lg-6 offset-lg-6">
+                          <div class="box p-50 d-flex">
+                            <div class="align-self-center">
+                              <h2 class="section-title">{{project.title}}</h2>
+                              <p>{{project.description}}</p>
+                              <div class="meta mb-0">{{ project.filters | join: ", " | replace: "-", " "  }}</div>
+                              <div class="space20"></div>
+                              <a href="{{project.url}}" target="_blank" class="btn">See for yourself</a>
+                            </div>
+                            <!-- /div -->
+                          </div>
+                          <!-- /.box -->
+                        </div>
+                        <!--/column -->
+                      </div>
+                      <!--/.row -->
+                    </div>
+                    <!--/div -->
+                  </div>
+                  <!--/.image-block-wrapper -->
+                </div>
+                <!--/.boxed -->
+              </div>
+              <!--/.modal-content -->
+            </div>
+            <!--/.modal-dialog -->
+          </div>
+          <!--/.modal -->
         {% endif %}
         {% endfor %}
+        </div>
       </div>
-      <!-- /.owl-carousel -->
+      <!--/.tiles -->
     </div>
-    <!-- /.grid-view -->
+    <!-- /.grid -->
   </div>
-  <!-- /.container-fluid -->
+  <!-- /.container -->
   <div class="space140"></div>
 </div>
 <!-- /.wrapper -->

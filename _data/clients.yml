@@ -1,25 +1,30 @@
 
 title: "Our Projects"
 sub_title: "Check out some of our awesome projects with creative ideas and great design."
-button_text: "See All Works"
+button_text: ""
 button_url: "/work"
 
 categories:
-  - title: "Jewelry"
-    filter: "jewelry"
-  - title: "Clothing"
-    filter: "clothing"
+  - title: "Custom Theme"
+    filter: "custom-theme"
+  - title: "Custom Features"
+    filter: "custom-features"
     
 projects:
   - title: "Marlo Laz"
+    description: "We made this project work. Therefore we are awesome. Challenges on the way have been thoose: X, Y, Z. But we managed them because, you know, we are aweasome."
     image: "/assets/images/clients/client_marlo_laz.webp"
+    detail-image: "/assets/images/clients/client_marlo_laz--detail.png"
     url: "https://www.marlolaz.com/"
     highlighted: true
     filters:
-      - jewelry
+      - custom-theme
+      - custom-features
   - title: "Rudi Gernreich"
+    description: "We made this project work. Therefore we are awesome. </br> Challenges on the way have been thoose: X, Y, Z. But we managed them because, you know, we are aweasome."
     image: "/assets/images/clients/client_rudi_gernreich.webp"
+    detail-image: "/assets/images/clients/client_rudi_gernreich--detail.png"
     url: "https://rudigernreich.com/"
     highlighted: true
     filters:
-      - clothing
+      - custom-theme
