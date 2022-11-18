@@ -15,15 +15,14 @@ services_area:
   button_text: "Learn More"
   button_url: "#"
   services:
-
     - title: "Custom Theme Developement"
       description: "Do you want a unique custom theme perfectly matching your corporate identity? We gotcha."
       icon: "jam jam-store"
-  
+
     - title: "Shopify App Development"
       description: "Do you want a function shopify does not support? We can build an shopify App to make your store even greater."
       icon: "jam jam-tools"
-  
+
     - title: "Consulting"
       description: "Do you want guidance on your journey to become an awesome web shop? Let's meet and get you on the right tracks."
       icon: "jam jam-messages-alt"
@@ -43,72 +42,82 @@ how_it_works:
     - title: "Enable you"
       description: "Everything we create, we want you to use it yourself. No unnecessary charging for tasks that, frankly, you could do yourself."
 
-
-teams_carousel: 
+teams_carousel:
+  enable: true
   title: Unser Team
   type: blob
+
+clients:
+  enable: false
 ---
 
 {% if page.hero_area.enable %}
-  <section id="home" class="pt-0 mt-0">
-      <div class="wrapper white-wrapper">
-          <div class="container inner-top">
-              <div class="row">
-                  <div class="col-md-9">
-                      <div class="space90"></div>
-                      <h1 class="display-1">
-                          {{page.hero_area.title}}
-                          <span class="typer color-default" id="typer" data-delay="100" data-delim=":" data-words="{% for text in page.hero_area.animated_text %} {{text | append: ':'}} {% endfor %}"> </span>
-                          <span class="cursor color-default" data-owner="typer"></span>
-                      </h1>
-                      <div class="space10"></div>
-                      <h2 class="display-4">{{ site.data.general_settings.description }}</h2>
-                      <div class="space60"></div>
-                      {%- comment -%} <div class="space30"></div> {%- endcomment -%}
-                  </div>
-              </div>
-          </div>
-          <!-- /.container -->
-          
+<section id="home" class="pt-0 mt-0">
+  <div class="wrapper white-wrapper">
+    <div class="container inner-top">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="space90"></div>
+          <h1 class="display-1">
+            {{page.hero_area.title}}
+            <span
+              class="typer color-default"
+              id="typer"
+              data-delay="100"
+              data-delim=":"
+              data-words="{% for text in page.hero_area.animated_text %} {{text | append: ':'}} {% endfor %}"
+            >
+            </span>
+            <span class="cursor color-default" data-owner="typer"></span>
+          </h1>
+          <div class="space10"></div>
+          <h2 class="display-4">
+            {{ site.data.general_settings.description }}
+          </h2>
+          <div class="space60"></div>
+          {%- comment -%}
+          <div class="space30"></div>
+          {%- endcomment -%}
+        </div>
       </div>
-      <!-- /.wrapper -->
-  </section>
-  <!-- /section -->
-{% endif %} 
-
-{% if page.services_area.enable %}
-  <div class="divider bg-white"><svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper bg-white" preserveAspectRatio="none" viewBox="0 0 1070 20.98">
-    <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg>
-  </div>
-  <div class="container inner-bottom">
-    <div class="space60"></div>
-    <div class="row gutter-80 gutter-md-30 text-center">
-      {% for service in page.services_area.services %}
-      <div class="col-md-4">
-        {% if service.icon %}
-        <span class="icon icon-blob
-          {% assign index = forloop.index %}
-          {% case index %}
-          {% when 1 %}
-          icon-blob-default color-default
-          {% when 2 %}
-          icon-blob-default color-default
-          {% when 3 %}
-          icon-blob-default color-default
-          {% endcase %}
-          mb-30"><i class="{{service.icon}}"></i><span class="step bg-dark">{{forloop.index}}</span></span>
-        {% endif %}
-        <h5>{{service.title}}</h5>
-        <p class="mb-15">{{service.description}}</p>
-      </div>
-      {% endfor %}
-      <div class="space40"></div>
     </div>
+    <!-- /.container -->
   </div>
-  <!--/.row -->
-{% endif %}
-
-{% if page.how_it_works.enable %}
+  <!-- /.wrapper -->
+</section>
+<!-- /section -->
+{% endif %} {% if page.services_area.enable %}
+<div class="divider bg-white">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="fill-light-wrapper bg-white"
+    preserveAspectRatio="none"
+    viewBox="0 0 1070 20.98"
+  >
+    <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" />
+  </svg>
+</div>
+<div class="container inner-bottom">
+  <div class="space60"></div>
+  <div class="row gutter-80 gutter-md-30 text-center">
+    {% for service in page.services_area.services %}
+    <div class="col-md-4">
+      {% if service.icon %}
+      <span
+        class="icon icon-blob {% assign index = forloop.index %} {% case index %} {% when 1 %} icon-blob-default color-default {% when 2 %} icon-blob-default color-default {% when 3 %} icon-blob-default color-default {% endcase %} mb-30"
+        ><i class="{{service.icon}}"></i
+        ><span class="step bg-dark">{{forloop.index}}</span></span
+      >
+      {% endif %}
+      <h5>{{service.title}}</h5>
+      <p class="mb-15">{{service.description}}</p>
+    </div>
+    {% endfor %}
+    <div class="space40"></div>
+  </div>
+</div>
+<!--/.row -->
+{% endif %} {% if page.how_it_works.enable %}
 <div class="wrapper light-wrapper">
   <div class="container inner-bottom">
     <div class="row align-items-center">
@@ -122,13 +131,11 @@ teams_carousel:
       <div class="space50 d-none d-md-block d-lg-none"></div>
       <div class="col-lg-5 pl-60 pl-md-15">
         {% if page.how_it_works.title %}
-         <h2 class="section-title larger">{{page.how_it_works.title}}</h2>
-        {% endif %}
-        {% if page.how_it_works.sub_title %}
+        <h2 class="section-title larger">{{page.how_it_works.title}}</h2>
+        {% endif %} {% if page.how_it_works.sub_title %}
         <h3 class="display-4">{{page.how_it_works.sub_title}}</h3>
         <div class="space30"></div>
-        {% endif %}
-        {% for steps in page.how_it_works.steps %}
+        {% endif %} {% for steps in page.how_it_works.steps %}
         <div class="d-flex flex-row justify-content-center">
           <div>
             <div class="icon icon-bg icon-bg-default color-default mr-25">
@@ -146,13 +153,21 @@ teams_carousel:
     </div>
     <!--/column -->
   </div>
-  <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-white" preserveAspectRatio="none" viewBox="0 0 1070 39.07">
-    <path d="M1070,39.07H0V21a6818.1,6818.1,0,0,1,1070,0Z" /></svg>
+  <div class="divider">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="fill-white"
+      preserveAspectRatio="none"
+      viewBox="0 0 1070 39.07"
+    >
+      <path d="M1070,39.07H0V21a6818.1,6818.1,0,0,1,1070,0Z" />
+    </svg>
   </div>
 </div>
 {% endif %}
 
-<!--Projects Wrapper-->
+<!--Clients Wrapper-->
+{% if page.clients.enable %}
 <div class="wrapper white-wrapper">
   <div class="container inner pb-50">
     {% if site.data.clients.title %}
@@ -163,10 +178,11 @@ teams_carousel:
       <div class="col-md-7">
         <h3 class="display-3 mb-0">{{site.data.clients.sub_title}}</h3>
       </div>
-      {% endif %}
-      {% if site.data.clients.button_text != "" %}
+      {% endif %} {% if site.data.clients.button_text != "" %}
       <div class="col-md-3 ml-auto text-right">
-        <a href="{{site.data.clients.button_url}}" class="btn btn-default m-0">{{site.data.clients.button_text}}</a>
+        <a href="{{site.data.clients.button_url}}" class="btn btn-default m-0"
+          >{{site.data.clients.button_text}}</a
+        >
       </div>
       {% endif %}
     </div>
@@ -179,69 +195,108 @@ teams_carousel:
         <ul>
           <li><a class="button active" data-filter="*">All</a></li>
           {% for category in site.data.clients.categories %}
-          <li><a class="button" data-filter=".{{category.filter}}">{{category.title}}</a></li>
+          <li>
+            <a class="button" data-filter=".{{category.filter}}"
+              >{{category.title}}</a
+            >
+          </li>
           {% endfor %}
         </ul>
       </div>
       <div class="clearfix"></div>
       <div class="tiles tiles-m">
         <div class="row isotope">
-        {% for project in site.data.clients.projects %}
-        {% if project.highlighted == true %}
-            <div class="item grid-sizer col-md-6 col-lg-4 {% for filter in project.filters %} {{filter}} {% endfor %}">
-              <figure class="overlay overlay1 rounded">
-                <a href="#" data-toggle="modal" data-target="#modal-{{ forloop.index0 }}">
-                 <img src="{{project.image}}" alt="{{project.title}}" class="cover ratio--16-10"/>
-                </a>
-                <figcaption>
-                  <h5 class="from-top mb-0">{{project.title}}</h5>
-                </figcaption>
-              </figure>
-              <div class="modal fade" id="modal-{{ forloop.index0 }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ forloop.index0 }}" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-                  <div class="modal-content boxed">
-                    <div class="container-fluid boxed p-0">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <div class="image-block-wrapper">
-                        <div class="image-block col-lg-6">
-                          <div class="image-block-bg bg-image" data-image-src="{{relative_url}}{{project.detail-image}}"></div>
-                        </div>
-                        <!--/.image-block -->
-                        <div>
-                          <div class="row no-gutters">
-                            <div class="col-lg-6 offset-lg-6">
-                              <div class="box p-50 d-flex">
-                                <div class="align-self-center">
-                                  <h2 class="section-title">{{project.title}}</h2>
-                                  <p>{{project.description}}</p>
-                                  <div class="meta mb-0">{{ project.filters | join: ", " | replace: "-", " "  }}</div>
-                                  <div class="space20"></div>
-                                  <a href="{{project.url}}" target="_blank" class="btn">See for yourself</a>
-                                </div>
-                                <!-- /div -->
-                              </div>
-                              <!-- /.box -->
-                            </div>
-                            <!--/column -->
-                          </div>
-                          <!--/.row -->
-                        </div>
-                        <!--/div -->
+          {% for project in site.data.clients.projects %} {% if
+          project.highlighted == true %}
+          <div
+            class="item grid-sizer col-md-6 col-lg-4 {% for filter in project.filters %} {{filter}} {% endfor %}"
+          >
+            <figure class="overlay overlay1 rounded">
+              <a
+                href="#"
+                data-toggle="modal"
+                data-target="#modal-{{ forloop.index0 }}"
+              >
+                <img
+                  src="{{project.image}}"
+                  alt="{{project.title}}"
+                  class="cover ratio--16-10"
+                />
+              </a>
+              <figcaption>
+                <h5 class="from-top mb-0">{{project.title}}</h5>
+              </figcaption>
+            </figure>
+            <div
+              class="modal fade"
+              id="modal-{{ forloop.index0 }}"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="modal-{{ forloop.index0 }}"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered modal-xl"
+                role="document"
+              >
+                <div class="modal-content boxed">
+                  <div class="container-fluid boxed p-0">
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="image-block-wrapper">
+                      <div class="image-block col-lg-6">
+                        <div
+                          class="image-block-bg bg-image"
+                          data-image-src="{{relative_url}}{{project.detail-image}}"
+                        ></div>
                       </div>
-                      <!--/.image-block-wrapper -->
+                      <!--/.image-block -->
+                      <div>
+                        <div class="row no-gutters">
+                          <div class="col-lg-6 offset-lg-6">
+                            <div class="box p-50 d-flex">
+                              <div class="align-self-center">
+                                <h2 class="section-title">{{project.title}}</h2>
+                                <p>{{project.description}}</p>
+                                <div class="meta mb-0">
+                                  {{ project.filters | join: ", " | replace:
+                                  "-", " " }}
+                                </div>
+                                <div class="space20"></div>
+                                <a
+                                  href="{{project.url}}"
+                                  target="_blank"
+                                  class="btn"
+                                  >See for yourself</a
+                                >
+                              </div>
+                              <!-- /div -->
+                            </div>
+                            <!-- /.box -->
+                          </div>
+                          <!--/column -->
+                        </div>
+                        <!--/.row -->
+                      </div>
+                      <!--/div -->
                     </div>
-                    <!--/.boxed -->
+                    <!--/.image-block-wrapper -->
                   </div>
-                  <!--/.modal-content -->
+                  <!--/.boxed -->
                 </div>
-                <!--/.modal-dialog -->
+                <!--/.modal-content -->
               </div>
-              <!--/.modal -->
+              <!--/.modal-dialog -->
             </div>
-        {% endif %}
-        {% endfor %}
+            <!--/.modal -->
+          </div>
+          {% endif %} {% endfor %}
         </div>
       </div>
       <!--/.tiles -->
@@ -251,9 +306,8 @@ teams_carousel:
   <!-- /.container -->
   <div class="space140"></div>
 </div>
+{% endif %}
 <!-- /.wrapper -->
-<!---/.projects Wrapper-->
+<!---/.clients Wrapper-->
 
-{% include team_members.html %}
-
-{% include footer_6.html %}
+{% include team_members.html %} {% include footer_6.html %}
