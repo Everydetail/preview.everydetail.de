@@ -2,11 +2,12 @@
 title: hey
 hero_area:
   enable: true
-  title: "We Are"
+  title: "We are"
   animated_text:
-    - "Awesome"
-    - "Shopify"
-    - "Theme developers"
+    - "Every detail"
+    - "shopify developers"
+    - "awesome"
+    - "your next favorite dev gang"
   background_image: "/assets/images/art/bg5.jpg"
 
 services_area:
@@ -15,32 +16,32 @@ services_area:
   button_url: "#"
   services:
 
-    - title: "Graphic Design"
-      description: "Nulla vitae elit libero elit non porta gravida eget metus cras. Aenean eu leo quam."
-      icon: "jam jam-flower"
+    - title: "Custom Theme Developement"
+      description: "Do you want a unique custom theme perfectly matching your corporate identity? We gotcha."
+      icon: "jam jam-store"
   
-    - title: "App Development"
-      description: "Nulla vitae elit libero elit non porta gravida eget metus cras. Aenean eu leo quam."
-      icon: "jam jam-phone"
+    - title: "Shopify App Development"
+      description: "Do you want a function shopify does not support? We can build an shopify App to make your store even greater."
+      icon: "jam jam-tools"
   
-    - title: "Web Design"
-      description: "Nulla vitae elit libero elit non porta gravida eget metus cras. Aenean eu leo quam."
-      icon: "jam jam-layout"
+    - title: "Consulting"
+      description: "Do you want guidance on your journey to become an awesome web shop? Let's meet and get you on the right tracks."
+      icon: "jam jam-messages-alt"
 
 how_it_works:
   enable: true
-  title: "Why we do it"
-  sub_title: "We have three mission statements. All with the goal to help you become great."
+  title: "What we care about"
+  sub_title: "First and foremost to make you become magnificent"
   image: "/assets/images/concept1@2x.png"
   steps:
-    - title: "Creative Ideas"
-      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida. Cras mattis consectetur."
+    - title: "Getting close"
+      description: "We want to get in touch with YOU. No communication with a middle man. No chinese whispers. Only clear an defined requirements."
 
-    - title: "Magic Touch"
-      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida. Cras mattis consectetur."
+    - title: "Golden mean"
+      description: "Let's discover what you truly need. Then we build that. Not more, not less, no bullshit."
 
-    - title: "Data Analysis"
-      description: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida. Cras mattis consectetur."
+    - title: "Enable you"
+      description: "Everything we create, we want you to use it yourself. No unnecessary charging for tasks that, frankly, you could do yourself."
 
 
 teams_carousel: 
@@ -51,7 +52,7 @@ teams_carousel:
 {% if page.hero_area.enable %}
   <section id="home" class="pt-0 mt-0">
       <div class="wrapper white-wrapper">
-          <div class="container inner">
+          <div class="container inner-top">
               <div class="row">
                   <div class="col-md-9">
                       <div class="space90"></div>
@@ -62,7 +63,8 @@ teams_carousel:
                       </h1>
                       <div class="space10"></div>
                       <h2 class="display-4">{{ site.data.general_settings.description }}</h2>
-                      <div class="space30"></div>
+                      <div class="space60"></div>
+                      {%- comment -%} <div class="space30"></div> {%- endcomment -%}
                   </div>
               </div>
           </div>
@@ -75,39 +77,40 @@ teams_carousel:
 {% endif %} 
 
 {% if page.services_area.enable %}
-  <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper bg-white" preserveAspectRatio="none" viewBox="0 0 1070 20.98">
-              <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg></div>
-  <div class="space50"></div>
-  <div class="row gutter-80 gutter-md-30 text-center">
-    {% for service in page.services_area.services %}
-    <div class="col-md-4">
-      {% if service.icon %}
-      <span class="icon icon-blob
-        {% assign index = forloop.index %}
-        {% case index %}
-        {% when 1 %}
-        icon-blob-default color-default
-        {% when 2 %}
-        icon-blob-default color-default
-        {% when 3 %}
-        icon-blob-default color-default
-        {% endcase %}
-        mb-30"><i class="{{service.icon}}"></i><span class="step bg-dark">{{forloop.index}}</span></span>
-      {% endif %}
-      <h5>{{service.title}}</h5>
-      <p class="mb-15">{{service.description}}</p>
-    </div>
-    {% endfor %}
-    <div class="space40"></div>
+  <div class="divider bg-white"><svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper bg-white" preserveAspectRatio="none" viewBox="0 0 1070 20.98">
+    <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg>
   </div>
-  {%- comment -%} <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-white" preserveAspectRatio="none" viewBox="0 0 1070 39.07">
-      <path d="M1070,39.07H0V21a6818.1,6818.1,0,0,1,1070,0Z" /></svg></div> {%- endcomment -%}
+  <div class="container inner-bottom">
+    <div class="space60"></div>
+    <div class="row gutter-80 gutter-md-30 text-center">
+      {% for service in page.services_area.services %}
+      <div class="col-md-4">
+        {% if service.icon %}
+        <span class="icon icon-blob
+          {% assign index = forloop.index %}
+          {% case index %}
+          {% when 1 %}
+          icon-blob-default color-default
+          {% when 2 %}
+          icon-blob-default color-default
+          {% when 3 %}
+          icon-blob-default color-default
+          {% endcase %}
+          mb-30"><i class="{{service.icon}}"></i><span class="step bg-dark">{{forloop.index}}</span></span>
+        {% endif %}
+        <h5>{{service.title}}</h5>
+        <p class="mb-15">{{service.description}}</p>
+      </div>
+      {% endfor %}
+      <div class="space40"></div>
+    </div>
+  </div>
   <!--/.row -->
 {% endif %}
 
 {% if page.how_it_works.enable %}
 <div class="wrapper light-wrapper">
-  <div class="container inner">
+  <div class="container inner-bottom">
     <div class="row align-items-center">
       {% if page.how_it_works.image %}
       <div class="col-lg-7">
@@ -144,7 +147,8 @@ teams_carousel:
     <!--/column -->
   </div>
   <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-white" preserveAspectRatio="none" viewBox="0 0 1070 39.07">
-      <path d="M1070,39.07H0V21a6818.1,6818.1,0,0,1,1070,0Z" /></svg></div>
+    <path d="M1070,39.07H0V21a6818.1,6818.1,0,0,1,1070,0Z" /></svg>
+  </div>
 </div>
 {% endif %}
 
@@ -184,59 +188,58 @@ teams_carousel:
         <div class="row isotope">
         {% for project in site.data.clients.projects %}
         {% if project.highlighted == true %}
-          <div class="item grid-sizer col-md-6 col-lg-4 {% for filter in project.filters %} {{filter}} {% endfor %}">
-            <figure class="overlay overlay1 rounded">
-              <a href="#" data-toggle="modal" data-target="#modal-{{ forloop.index0 }}">
-               <img src="{{project.image}}" alt="{{project.title}}" class="cover ratio--16-10"/>
-              </a>
-              <figcaption>
-                <h5 class="from-top mb-0">{{project.title}}</h5>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="modal fade" id="modal-{{ forloop.index0 }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ forloop.index0 }}" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-              <div class="modal-content boxed">
-                <div class="container-fluid boxed p-0">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <div class="image-block-wrapper">
-                    <div class="image-block col-lg-6">
-                      <div class="image-block-bg bg-image" data-image-src="{{relative_url}}{{project.detail-image}}"></div>
-                    </div>
-                    <!--/.image-block -->
-                    <div>
-                      <div class="row no-gutters">
-                        <div class="col-lg-6 offset-lg-6">
-                          <div class="box p-50 d-flex">
-                            <div class="align-self-center">
-                              <h2 class="section-title">{{project.title}}</h2>
-                              <p>{{project.description}}</p>
-                              <div class="meta mb-0">{{ project.filters | join: ", " | replace: "-", " "  }}</div>
-                              <div class="space20"></div>
-                              <a href="{{project.url}}" target="_blank" class="btn">See for yourself</a>
-                            </div>
-                            <!-- /div -->
-                          </div>
-                          <!-- /.box -->
+            <div class="item grid-sizer col-md-6 col-lg-4 {% for filter in project.filters %} {{filter}} {% endfor %}">
+              <figure class="overlay overlay1 rounded">
+                <a href="#" data-toggle="modal" data-target="#modal-{{ forloop.index0 }}">
+                 <img src="{{project.image}}" alt="{{project.title}}" class="cover ratio--16-10"/>
+                </a>
+                <figcaption>
+                  <h5 class="from-top mb-0">{{project.title}}</h5>
+                </figcaption>
+              </figure>
+              <div class="modal fade" id="modal-{{ forloop.index0 }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ forloop.index0 }}" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                  <div class="modal-content boxed">
+                    <div class="container-fluid boxed p-0">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <div class="image-block-wrapper">
+                        <div class="image-block col-lg-6">
+                          <div class="image-block-bg bg-image" data-image-src="{{relative_url}}{{project.detail-image}}"></div>
                         </div>
-                        <!--/column -->
+                        <!--/.image-block -->
+                        <div>
+                          <div class="row no-gutters">
+                            <div class="col-lg-6 offset-lg-6">
+                              <div class="box p-50 d-flex">
+                                <div class="align-self-center">
+                                  <h2 class="section-title">{{project.title}}</h2>
+                                  <p>{{project.description}}</p>
+                                  <div class="meta mb-0">{{ project.filters | join: ", " | replace: "-", " "  }}</div>
+                                  <div class="space20"></div>
+                                  <a href="{{project.url}}" target="_blank" class="btn">See for yourself</a>
+                                </div>
+                                <!-- /div -->
+                              </div>
+                              <!-- /.box -->
+                            </div>
+                            <!--/column -->
+                          </div>
+                          <!--/.row -->
+                        </div>
+                        <!--/div -->
                       </div>
-                      <!--/.row -->
+                      <!--/.image-block-wrapper -->
                     </div>
-                    <!--/div -->
+                    <!--/.boxed -->
                   </div>
-                  <!--/.image-block-wrapper -->
+                  <!--/.modal-content -->
                 </div>
-                <!--/.boxed -->
+                <!--/.modal-dialog -->
               </div>
-              <!--/.modal-content -->
+              <!--/.modal -->
             </div>
-            <!--/.modal-dialog -->
-          </div>
-          <!--/.modal -->
         {% endif %}
         {% endfor %}
         </div>
