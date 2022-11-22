@@ -28,42 +28,11 @@ social_accounts:
     - url: "https://www.linkedin.com/company/everydetail/"
       icon: "jam jam-linkedin"
 
-
 external_links:
   title: "Learn More about us"
   links:
     - url: "/work"
       text: "Our Work"
-
-
-external_links_02:
-  title: "Need Help?"
-  links:
-    - url: "#"
-      text: "Support"
-    - url: "#"
-      text: "Get Started"
-    - url: "#"
-      text: "Contact Us"
-    - url: "#"
-      text: "Terms of Use"
-    - url: "#"
-      text: "Privacy Policy"
-
-
-external_links_03:
-  title: "Company"
-  links:
-    - url: "#"
-      text: "Our Team"
-    - url: "#"
-      text: "Strategy"
-    - url: "#"
-      text: "Service"
-    - url: "#"
-      text: "Mission"
-    - url: "#"
-      text: "Process"
 
 footer_newsletter:
   title: "Our Newsletter"
@@ -75,25 +44,6 @@ main_menu:
   - text: "Home"
     url: "/"
     menu_type:
-  - text: "Contact Us"
-    url: "/contact"
-    menu_type:
-
-
-one_page_nav_settings:
-  links:
-    - text: "Home"
-      url: "#home"
-    - text: "Services"
-      url: "#services"
-    - text: "Experiences"
-      url: "#experiences"
-    - text: "Portfolio"
-      url: "#portfolio"
-    - text: "Testimonials"
-      url: "#testimonials"
-    - text: "Contact"
-      url: "#contact"
 
 author_page_header:
   header_background_image: "/assets/images/art/bg31.jpg"
