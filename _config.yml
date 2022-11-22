@@ -2,6 +2,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.everydetail.de" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: "/:title"
 
+exclude:
+  - bin
+
 # Build settings
 theme: minima
 # plugins:
