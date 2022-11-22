@@ -1,3 +1,6 @@
 {
-  "window.title": "everydetail.de | PREVIEW"
+  "window.title": "everydetail.de | PREVIEW",
+  "files.associations": {
+    "*.html": "liquid"
+  }
 }
