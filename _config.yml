@@ -4,6 +4,7 @@ permalink: "/:title"
 
 exclude:
   - bin
+  - vendor
 
 # Build settings
 theme: minima
