@@ -10,6 +10,9 @@ hero_area:
     - "your next favorite dev gang"
   background_image: "/assets/images/art/bg5.jpg"
 
+certificates:
+  enable: true
+
 services_area:
   enable: true
   button_text: "Learn More"
@@ -74,13 +77,20 @@ clients:
             <h2 class="display-4">
               {{ site.data.general_settings.description }}
             </h2>
-            <div class="space60"></div>
-            {%- comment -%}
-            <div class="space30"></div>
-            {%- endcomment -%}
+            <div class="space10"></div>
           </div>
         </div>
+        {% if page.certificates.enable %}
+          <div class="row">
+            <div class="col-8 col-md-4 col-lg-2">
+              <figure><img src="{{relative_url}}/assets/images/certificates/ShopifyPartners_Primary.png" alt="" /></figure>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        {% endif %}
       </div>
+      <div class="space60"></div>
     </div>
   </section>
 {% endif %}
