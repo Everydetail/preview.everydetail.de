@@ -1,5 +1,7 @@
 ---
 title: hey
+layout: default
+
 hero_area:
   enable: true
   title: "We are"
@@ -80,17 +82,28 @@ clients:
             <div class="space10"></div>
           </div>
         </div>
-        {% if page.certificates.enable %}
+        <div class="container">
+          <div class="box shadow p-20 image-wrapper bg-full bg-image inverse-text rounded d-md-flex align-items-md-center justify-content-md-between" data-image-src="{{relative_url}}/assets/images/art/bg9.jpg">
+          <h3 class="display-3 mb-0">Text um mehr Infos zu bekommen</h3>
+          <a href="{{relative_url}}/infos.html" class="btn btn-white btn-strong-hover mb-0">More Infos</a>
+          </div>
+          <!--/.box -->
+          </div>
+          <!-- /.container -->
+          <div class="space20"></div>
+          {% if page.certificates.enable %}
           <div class="row">
             <div class="col-8 col-md-4 col-lg-2">
               <figure><img src="{{relative_url}}/assets/images/certificates/ShopifyPartners_Primary.png" alt="" /></figure>
-            </div>
-            <!--/column -->
-          </div>
-          <!--/.row -->
-        {% endif %}
-      </div>
-      <div class="space60"></div>
+              </div>
+              <!--/column -->
+              </div>
+              <!--/.row -->
+            {% endif %}
+          <div class="space20"></div>
+        </div>
+      <div class="space20"></div>
+
     </div>
   </section>
 {% endif %}
