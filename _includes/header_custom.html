@@ -1,0 +1,40 @@
+<nav class="navbar absolute transparent navbar-expand-lg nav-uppercase">
+  <div class="container flex-row justify-content-center">
+    <div class="navbar-brand">
+      <a href="{{site.url}}">
+        {% if include.light_logo %}
+         <img src="{{site.data.general_settings.light_logo_1x}}" srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x" class="{% if include.logo_class %} {{include.logo_class}} {% else %} logo-light {% endif %}" alt="{{site.data.general_settings.title}}"/>
+         {% endif %}
+         <img src="{{site.data.general_settings.black_logo_1x}}" srcset="{{site.data.general_settings.black_logo_1x}} 1x, {{site.data.general_settings.black_logo_2x}} 2x" class="{% if include.logo_class %} {{include.logo_class}} {% else %} logo-dark {% endif %} {% if include.black_logo_disable %} d-none {% endif %}" alt="{{site.data.general_settings.title}}"/>
+      </a>
+    </div>
+    <div class="navbar-other ml-auto order-lg-3">
+      <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
+        <li class="nav-item">
+          <div class="navbar-hamburger d-lg-none d-xl-none ml-auto"><button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button></div>
+        </li>
+        <li class="nav-item d-none d-lg-block pl-0"><a href="mailto:{{site.data.general_settings.email}}" class="btn btn-default m-0">Contact Us</a></li>
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-other -->
+    <div class="navbar-collapse offcanvas-nav">
+      <div class="offcanvas-header d-lg-none d-xl-none">
+        <a href="{{site.url}}">
+          <img src="{{site.data.general_settings.light_logo_1x}}" srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x" alt="{{site.data.general_settings.title}}"/></a>
+        <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
+      </div>
+      <ul class="navbar-nav mx-auto">
+        {% for menu in site.data.navigation.main_menu %}
+        <li class="nav-item">
+        <a class="nav-link" href="{{menu.url}}">{{menu.text}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- /.navbar -->

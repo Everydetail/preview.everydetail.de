@@ -1,0 +1,9 @@
+main_menu:
+
+  - text: "Home"
+    url: "/"
+    has_submenu: "false"
+
+  - text: "Our Solution"
+    url: "/infos"
+    has_submenu: "false"

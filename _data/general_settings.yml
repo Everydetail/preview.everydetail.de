@@ -39,12 +39,6 @@ footer_newsletter:
   sub_title: "Subscribe to our newsletter to get our news & deals delivered to your inbox!"
   subscribe_button_text: "Join"
 
-
-main_menu:
-  - text: "Home"
-    url: "/"
-    menu_type:
-
 author_page_header:
   header_background_image: "/assets/images/art/bg31.jpg"
 
